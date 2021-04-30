@@ -1,0 +1,149 @@
+input[type="number"],
+input[type="text"] {
+  border: 1.9px solid rgb(220 183 0);
+  font-weight: 300;
+  font-size: 25px;
+  padding: 8px;
+  width: 95%;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border: 1.9px solid rgb(0, 132, 255);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: rgb(43, 211, 99);
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: rgb(99, 228, 142) !important;
+  cursor: not-allowed;
+}
+
+.reset {
+  margin-left: 10px;
+  background-color: rgb(255, 62, 62);
+}
+
+.reset:hover {
+  background-color: rgb(216, 52, 52);
+}
+
+button:hover {
+  background-color: rgb(34, 165, 78);
+}
+
+.container {
+  width: 28%;
+  margin: 0 auto;
+  height: 100%;
+  margin-top: 5%;
+  background-color: rgb(255 253 231);
+  padding: 40px;
+  padding-bottom: 30px;
+  border-bottom: 4px solid rgb(255, 230, 87);
+  filter: drop-shadow(3px 10px 16px rgb(0, 0, 0, 0.2));
+}
+
+.container h2 {
+  font-weight: 400;
+  font-size: 80px;
+  text-align: center;
+  @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+  font-family: "Playfair Display", serif;
+}
+
+.Subtext {
+  text-align: center;
+  font-size: 25px;
+  margin: 20px;
+}
+
+.edit {
+  background-color: rgb(0, 153, 255);
+}
+
+.edit:hover {
+  background-color: rgb(0, 110, 184);
+}
+.btns-container {
+  display: flex;
+}
+
+.error{
+    color: red;
+}
+
+.backdrop {
+  width: 100wh;
+  display: block;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  top: 1;
+  top: 1px;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+}
+
+.container-box {
+  position: fixed;
+  top: 50%;
+  left: 41%;
+  width: 28%;
+  background-color: white;
+  margin: 0 auto;
+  font-size: 28px;
+  filter: drop-shadow(2px 4px 27px rgb(0, 0, 0, 0.2));
+}
+
+.q {
+  margin-bottom: 8px;
+  padding: 21px;
+}
+
+.btn-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+}
+
+.btn-yes {
+  background-color: #f74343;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-yes:hover{
+    background-color: #db3a3a;
+}
+
+.btn-no {
+  background-color: #bdbdbd;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-no:hover{
+    background-color: #acacac;
+}

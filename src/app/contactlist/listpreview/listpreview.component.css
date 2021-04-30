@@ -1,0 +1,40 @@
+.contact{
+    align-items:center;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.contact h3,p{
+    font-size: 16px;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.more-icon{
+    height: 19px;
+}
+
+.moreicon-class{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon{
+    width: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.icon:last-child:hover{
+    filter:invert(30%) sepia(80) saturate(10) hue-rotate(332deg);
+}
+
+.icon:first-child{
+    margin-right: 30px;
+}
+
+.icon:first-child:hover{
+    filter:invert(30%) sepia(80) saturate(10) hue-rotate(122deg);
+}

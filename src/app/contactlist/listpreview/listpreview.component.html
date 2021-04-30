@@ -1,0 +1,10 @@
+
+<div>
+    <div class="contact" *ngFor="let a of List;let i=index">
+        <h3>{{a.Name}} :</h3><p>{{a.phnumber}}</p>
+        <div class="moreicon-class">
+        <img src="assets/edit.svg" alt="edit" (click)=edit(a.Name,a.phnumber,i) class="icon">
+        <img src="assets/delete.svg" alt="" (click)=dlt(i) class="icon">
+        </div>
+    </div>
+</div>

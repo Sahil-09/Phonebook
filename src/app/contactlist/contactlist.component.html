@@ -1,0 +1,39 @@
+<div class="backdrop" *ngIf="dltmode" (click)="closeswitch()">
+    <div class="container-box">
+        <p class="q">Do you really want to delete {{dltname}}?</p>
+        <div class="btn-container"><p  class="btn-yes" (click)="Delete()">Yes</p><p class="btn-no" (click)="closeswitch()">No</p></div>
+    </div>
+</div>
+<div class="container">
+
+    <h2>Sahil's Phonebook</h2>
+    <p class="Subtext">{{Editmode? 'Editing contact' : 'Add new contact'}}</p>
+    <form (ngSubmit)="Add()" #form="ngForm">
+    
+    <p *ngIf="!Name.valid && Name.touched" class="error">Please enter Name</p>
+    <input type="text"
+    placeholder="Enter name here*"
+    name="Name" #Name="ngModel"
+    ngModel required><br><br>
+
+    <p *ngIf="!phnumber.valid && phnumber.touched" class="error">Please enter Number</p>
+    <input type="number"
+    placeholder="Enter number here*"
+    minlength="10" name="phnumber"
+    #phnumber="ngModel" ngModel required>
+    <br><br>
+
+    <div class="btns-container">
+    <button type="submit" 
+    [disabled]="!form.valid" 
+    class="btn"
+    [ngClass]="Editmode ? 'edit':'none'">{{Editmode ? 'Update':'Add'}} contact</button>
+
+    <button type="button" class="reset" *ngIf="form.touched && form.dirty || Editmode" (click)="reset()">Reset</button>
+    </div>
+    </form>
+    <br><br>
+    <hr>
+    <br>
+    <app-listpreview (dataem)="fill($event)" (index)="dltswitch($event)"></app-listpreview>
+</div>
