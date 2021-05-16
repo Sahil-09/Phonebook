@@ -46,7 +46,7 @@ export class ContactlistComponent implements OnInit {
     if(this.nform?.value){
       if(!this.Editmode){
         let data=this.nform.value;
-        this.http.post('http://localhost:3000/api/add',data).subscribe(res=>{
+        this.http.post('https://phonebook9.herokuapp.com/api/add',data).subscribe(res=>{
         this.Contactser.GetContact()
         this.PhoneList.push(data)
         })
@@ -55,7 +55,7 @@ export class ContactlistComponent implements OnInit {
       }
       else{
         let data=this.PhoneList[this.indexnumber]._id;
-        this.http.patch("http://localhost:3000/api/update/"+data,this.nform.value).subscribe(dat=>{
+        this.http.patch("https://phonebook9.herokuapp.com/api/update/"+data,this.nform.value).subscribe(dat=>{
           this.PhoneList[this.indexnumber]=this.nform?.value;
           this.nform?.resetForm()
           this.Editmode=false
@@ -86,7 +86,7 @@ export class ContactlistComponent implements OnInit {
 
   Delete(){
     let data=this.PhoneList[this.indexnumber]._id
-    this.http.delete("http://localhost:3000/api/delete/"+data).subscribe()
+    this.http.delete("https://phonebook9.herokuapp.com/delete/"+data).subscribe()
     this.PhoneList.splice(this.indexnumber,1)
   }
 
