@@ -15,6 +15,7 @@ export class ListpreviewComponent implements OnInit {
   List:Contacts[]=[]
 
   ngOnInit(){
+    console.log("this works?")
     this.Contactser.GetContact()
     this.Contactser.PhoneList.subscribe(data=>{
       this.List=data
