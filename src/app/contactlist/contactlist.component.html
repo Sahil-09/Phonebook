@@ -33,6 +33,10 @@
     <button type="button" class="reset" *ngIf="form.touched && form.dirty || Editmode" (click)="reset()">Reset</button>
     </div>
     </form> 
-    <app-listpreview></app-listpreview>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <app-listpreview (index)="dltswitch($event)" (dataem)="fill($event)"></app-listpreview>
     
 </div>
