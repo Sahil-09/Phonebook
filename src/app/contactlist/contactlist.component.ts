@@ -86,7 +86,7 @@ export class ContactlistComponent implements OnInit {
 
   Delete(){
     let data=this.PhoneList[this.indexnumber]._id
-    this.http.delete("https://phonebook9.herokuapp.com/delete/"+data).subscribe()
+    this.http.delete("https://phonebook9.herokuapp.com/api/delete/"+data).subscribe()
     this.PhoneList.splice(this.indexnumber,1)
   }
 
