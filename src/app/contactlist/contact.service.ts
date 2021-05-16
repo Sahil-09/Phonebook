@@ -14,7 +14,7 @@ export class ContactService{
     constructor(private http:HttpClient){}
 
     GetContact(){
-        this.http.get<Contacts[]>("https://phonebook9.herokuapp.com/api/get").pipe(map(data=>{
+        this.http.get<Contacts[]>("http://phonebook9.herokuapp.com/api/get").pipe(map(data=>{
             let res:Contacts[]=[] 
             for(let a of data){
               res.push(a)
