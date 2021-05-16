@@ -8,7 +8,8 @@
 
     <h2>Sahil's Phonebook</h2>
     <p class="Subtext">{{Editmode? 'Editing contact' : 'Add new contact'}}</p>
-    <form (ngSubmit)="Add()" #form="ngForm">
+    
+    <!-- <form (ngSubmit)="Add()" #form="ngForm">
     
     <p *ngIf="!Name.valid && Name.touched" class="error">Please enter Name</p>
     <input type="text"
@@ -31,7 +32,36 @@
 
     <button type="button" class="reset" *ngIf="form.touched && form.dirty || Editmode" (click)="reset()">Reset</button>
     </div>
-    </form>
+    </form> -->
+
+    <form (ngSubmit)="rform(contactform.value)" [formGroup]="contactform">
+    
+        <p *ngIf="!contactform.get('Name').valid && contactform.get('Name').touched" class="error">Please enter Name</p>
+        <input type="text"
+        placeholder="Enter name here*",
+        formControlName="Name"
+        required><br><br>
+    
+        <p *ngIf="!contactform.('phnumber').valid && contactform.('phnumber').touched" class="error">Please enter Number</p>
+        <input type="number"
+        placeholder="Enter number here*"
+        minlength="10" name="phnumber"
+        formControlName="phnumber"
+        required>
+        <br><br>
+    
+        <div class="btns-container">
+        <button type="submit" 
+        [disabled]="!contactform.valid" 
+        class="btn"
+        [ngClass]="Editmode ? 'edit':'none'">{{Editmode ? 'Update':'Add'}} contact</button>
+    
+        <button type="button" 
+        class="reset" *ngIf="contactform.touched && contactform.dirty || Editmode" 
+        (click)="reset()">Reset</button>
+
+        </div>
+        </form>
     <br><br>
     <hr>
     <br>

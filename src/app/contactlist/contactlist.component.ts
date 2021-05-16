@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import{map} from 'rxjs/operators'
-import {  NgForm } from '@angular/forms';
+import {  FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Contacts } from './contac.inteface';
 import { ContactService } from './contact.service';
 
@@ -13,18 +13,32 @@ import { ContactService } from './contact.service';
 export class ContactlistComponent implements OnInit {
   @ViewChild('form') nform: NgForm | undefined;
 
+  contactform=new FormGroup({
+    Name:new FormControl(null,Validators.required),
+    phnumber:new FormControl(null,[Validators.required,Validators.minLength(10)])
+  })
+
   Editmode=false;
   indexnumber:number=0
-  dltmode=false
-  dltname:string=''
+  dltmode=false;
+  dltname:string='';
   constructor(private http:HttpClient,private Contactser:ContactService) { }
-
+  
   PhoneList:Contacts[]= []
 
   ngOnInit() {
+    this.contactform=new FormGroup({
+      Name:new FormControl(null,Validators.required),
+      phnumber:new FormControl(null,[Validators.required,Validators.minLength(10)])
+    })
+
     this.Contactser.PhoneList.subscribe(dataa=>{
       this.PhoneList=dataa
     })
+  }
+
+  rform(form:any){
+    console.log(form)
   }
 
 
